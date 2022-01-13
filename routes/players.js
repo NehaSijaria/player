@@ -1,3 +1,5 @@
+// routes/players.js
+
 const express = require("express");
 const router = express.Router();
 let players = require("../db");
@@ -14,8 +16,8 @@ router.get("/list", async (req, res) => {
     });
   }
 });
-//Create a route to get a single-player details
-router.get("/list/:id", async (req, res) => {
+
+router.get("/:id", async (req, res) => {
   let { id } = req.params;
   id = Number(id);
   try {
